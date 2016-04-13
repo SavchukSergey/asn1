@@ -1,0 +1,12 @@
+/*.suo
+/Asn1/bin/
+/Asn1/obj/
+/Asn1.Tests/bin/
+/Asn1.Tests/obj/
+
+/Asn1.sln.DotSettings.user
+/_ReSharper.Caches
+/.vs/Asn1/v14/.suo
+/packages/*/
+/build/output
+/build/package
