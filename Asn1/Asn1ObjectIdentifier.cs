@@ -152,16 +152,60 @@ namespace Asn1 {
             return FriendlyName;
         }
 
-        public static Asn1ObjectIdentifier CommonName { get; } = new Asn1ObjectIdentifier("2.5.4.3");
+        /// <summary>
+        /// 2.5.4.3
+        /// </summary>
+        public static Asn1ObjectIdentifier CountryName { get; } = new Asn1ObjectIdentifier("2.5.4.3");
+        /// <summary>
+        /// 2.5.4.6
+        /// </summary>
+        public static Asn1ObjectIdentifier CommonName { get; } = new Asn1ObjectIdentifier("2.5.4.6");
+        /// <summary>
+        /// 2.5.4.10
+        /// </summary>
+        public static Asn1ObjectIdentifier OrganizationName { get; } = new Asn1ObjectIdentifier("2.5.4.10");
+        /// <summary>
+        /// 2.5.4.11
+        /// </summary>
+        public static Asn1ObjectIdentifier OrganizationalUnitName { get; } = new Asn1ObjectIdentifier("2.5.4.11");
 
+        /// <summary>
+        /// 2.5.29.15
+        /// </summary>
         public static Asn1ObjectIdentifier KeyUsage { get; } = new Asn1ObjectIdentifier("2.5.29.15");
+        /// <summary>
+        /// 2.5.29.17
+        /// </summary>
         public static Asn1ObjectIdentifier SubjectAltName { get; } = new Asn1ObjectIdentifier("2.5.29.17");
+        /// <summary>
+        /// 2.5.29.19
+        /// </summary>
         public static Asn1ObjectIdentifier BasicConstraints { get; } = new Asn1ObjectIdentifier("2.5.29.19");
+        /// <summary>
+        /// 2.5.29.31
+        /// </summary>
         public static Asn1ObjectIdentifier CrlDistributionPoints { get; } = new Asn1ObjectIdentifier("2.5.29.31");
+        /// <summary>
+        /// 2.5.29.32
+        /// </summary>
         public static Asn1ObjectIdentifier CertificatePolicies { get; } = new Asn1ObjectIdentifier("2.5.29.32");
+        /// <summary>
+        /// 2.5.29.35
+        /// </summary>
         public static Asn1ObjectIdentifier AuthorityKeyIdentifier { get; } = new Asn1ObjectIdentifier("2.5.29.35");
+        /// <summary>
+        /// 2.5.29.37
+        /// </summary>
         public static Asn1ObjectIdentifier ExtKeyUsage { get; } = new Asn1ObjectIdentifier("2.5.29.37");
 
+        /// <summary>
+        /// 1.2.840.113549.1.1.1
+        /// </summary>
         public static Asn1ObjectIdentifier RsaEncryption { get; } = new Asn1ObjectIdentifier("1.2.840.113549.1.1.1");
+
+        /// <summary>
+        /// 1.2.840.113549.1.1.5
+        /// </summary>
+        public static Asn1ObjectIdentifier Sha1WithRsaEncryption { get; } = new Asn1ObjectIdentifier("1.2.840.113549.1.1.5");
     }
 }

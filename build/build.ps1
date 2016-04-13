@@ -6,7 +6,7 @@ $packageDir = "$buildDir\package"
 
 $buildNuGet = $true;
 $nugetPackageId = "Asn1";
-$nugetVersion = "1.0.0";
+$nugetVersion = "1.0.1";
 $nugetSourcePath = "$buildDir\Asn1.nuspec"
 $nuget = "$buildDir\nuget\nuget.exe"
 $nugetOutput = "$buildDir\output"
