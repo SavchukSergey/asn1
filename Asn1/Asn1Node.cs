@@ -15,6 +15,10 @@ namespace Asn1 {
 
         public IList<Asn1Node> Nodes { get; } = new List<Asn1Node>();
 
+        public Asn1Node FindSingleNode(Asn1TagClass tagClass, int tagId) {
+            return Nodes.FirstOrDefault(n => n.Is(tagClass, tagId));
+        }
+
         private static int ReadTagLength(Stream stream) {
             var len = stream.ReadByte();
             if (len > 128) {
