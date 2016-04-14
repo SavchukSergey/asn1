@@ -169,6 +169,12 @@ namespace Asn1 {
         /// </summary>
         public static Asn1ObjectIdentifier OrganizationalUnitName { get; } = new Asn1ObjectIdentifier("2.5.4.11");
 
+        #region Extensions Ids
+
+        /// <summary>
+        /// 2.5.29.14
+        /// </summary>
+        public static Asn1ObjectIdentifier SubjectKeyIdentifier { get; } = new Asn1ObjectIdentifier("2.5.29.14");
         /// <summary>
         /// 2.5.29.15
         /// </summary>
@@ -177,6 +183,10 @@ namespace Asn1 {
         /// 2.5.29.17
         /// </summary>
         public static Asn1ObjectIdentifier SubjectAltName { get; } = new Asn1ObjectIdentifier("2.5.29.17");
+        /// <summary>
+        /// 2.5.29.18
+        /// </summary>
+        public static Asn1ObjectIdentifier IssuerAltName { get; } = new Asn1ObjectIdentifier("2.5.29.18");
         /// <summary>
         /// 2.5.29.19
         /// </summary>
@@ -197,6 +207,8 @@ namespace Asn1 {
         /// 2.5.29.37
         /// </summary>
         public static Asn1ObjectIdentifier ExtKeyUsage { get; } = new Asn1ObjectIdentifier("2.5.29.37");
+
+        #endregion
 
         /// <summary>
         /// 1.2.840.113549.1.1.1

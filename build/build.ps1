@@ -6,7 +6,7 @@ $packageDir = "$buildDir\package"
 
 $buildNuGet = $true;
 $nugetPackageId = "Asn1";
-$nugetVersion = "1.0.1";
+#$nugetVersion = "1.0.1";
 $nugetSourcePath = "$buildDir\Asn1.nuspec"
 $nuget = "$buildDir\nuget\nuget.exe"
 $nugetOutput = "$buildDir\output"
@@ -32,7 +32,7 @@ function Update-NuSpec ($path) {
     $xml = [xml](Get-Content $path)
 	$meta = $xml.package.metadata;
 	$meta.id = $nugetPackageId;
-	$meta.version = $nugetVersion;
+	#$meta.version = $nugetVersion;
     $xml.save($path)
 }
 

@@ -1,5 +1,4 @@
 ﻿using System.IO;
-using System.Security.Cryptography.X509Certificates;
 using NUnit.Framework;
 
 namespace Asn1.Tests {

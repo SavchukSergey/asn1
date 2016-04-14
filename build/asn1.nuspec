@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Asn1</id>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <title>Asn1</title>
     <description>Asn1 is a tool for parsing and formating ASN1 files.</description>
     <authors>Sergey Savchuk</authors>
