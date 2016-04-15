@@ -155,11 +155,19 @@ namespace Asn1 {
         /// <summary>
         /// 2.5.4.3
         /// </summary>
-        public static Asn1ObjectIdentifier CountryName { get; } = new Asn1ObjectIdentifier("2.5.4.3");
+        public static Asn1ObjectIdentifier CommonName { get; } = new Asn1ObjectIdentifier("2.5.4.3");
         /// <summary>
         /// 2.5.4.6
         /// </summary>
-        public static Asn1ObjectIdentifier CommonName { get; } = new Asn1ObjectIdentifier("2.5.4.6");
+        public static Asn1ObjectIdentifier CountryName { get; } = new Asn1ObjectIdentifier("2.5.4.6");
+        /// <summary>
+        /// 2.5.4.7
+        /// </summary>
+        public static Asn1ObjectIdentifier LocalityName { get; } = new Asn1ObjectIdentifier("2.5.4.7");
+        /// <summary>
+        /// 2.5.4.9
+        /// </summary>
+        public static Asn1ObjectIdentifier StreetAddress { get; } = new Asn1ObjectIdentifier("2.5.4.9");
         /// <summary>
         /// 2.5.4.10
         /// </summary>
@@ -219,5 +227,10 @@ namespace Asn1 {
         /// 1.2.840.113549.1.1.5
         /// </summary>
         public static Asn1ObjectIdentifier Sha1WithRsaEncryption { get; } = new Asn1ObjectIdentifier("1.2.840.113549.1.1.5");
+
+        /// <summary>
+        /// 1.2.840.113549.1.1.11
+        /// </summary>
+        public static Asn1ObjectIdentifier Sha256WithRsaEncryption { get; } = new Asn1ObjectIdentifier("1.2.840.113549.1.1.11");
     }
 }
