@@ -222,15 +222,22 @@ namespace Asn1 {
         /// 1.2.840.113549.1.1.1
         /// </summary>
         public static Asn1ObjectIdentifier RsaEncryption { get; } = new Asn1ObjectIdentifier("1.2.840.113549.1.1.1");
-
         /// <summary>
         /// 1.2.840.113549.1.1.5
         /// </summary>
         public static Asn1ObjectIdentifier Sha1WithRsaEncryption { get; } = new Asn1ObjectIdentifier("1.2.840.113549.1.1.5");
-
         /// <summary>
         /// 1.2.840.113549.1.1.11
         /// </summary>
         public static Asn1ObjectIdentifier Sha256WithRsaEncryption { get; } = new Asn1ObjectIdentifier("1.2.840.113549.1.1.11");
+        /// <summary>
+        /// 1.2.840.113549.1.9.20
+        /// </summary>
+        //public static Asn1ObjectIdentifier FriendlyName { get; } = new Asn1ObjectIdentifier("1.2.840.113549.1.9.20");
+
+        /// <summary>
+        /// 1.3.14.3.2.26
+        /// </summary>
+        public static Asn1ObjectIdentifier Sha1 { get; } = new Asn1ObjectIdentifier("1.3.14.3.2.26");
     }
 }
