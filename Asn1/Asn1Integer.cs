@@ -29,6 +29,15 @@ namespace Asn1 {
             Value = data.ToArray();
         }
 
+        public ulong ToUInt64() {
+            ulong val = 0;
+            for (var i = 0; i < Value.Length; i++) {
+                val = val << 8;
+                val |= Value[i];
+            }
+            return val;
+        }
+
         public static Asn1Integer ReadFrom(Stream stream) {
             var vals = new List<byte>();
             while (stream.Position < stream.Length) {

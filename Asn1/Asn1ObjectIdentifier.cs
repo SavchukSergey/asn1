@@ -236,6 +236,11 @@ namespace Asn1 {
         //public static Asn1ObjectIdentifier FriendlyName { get; } = new Asn1ObjectIdentifier("1.2.840.113549.1.9.20");
 
         /// <summary>
+        /// 1.3.6.1.5.5.7.1.1
+        /// </summary>
+        public static Asn1ObjectIdentifier AuthorityInfoAccess { get; } = new Asn1ObjectIdentifier("1.3.6.1.5.5.7.48.2");
+
+        /// <summary>
         /// 1.3.14.3.2.26
         /// </summary>
         public static Asn1ObjectIdentifier Sha1 { get; } = new Asn1ObjectIdentifier("1.3.14.3.2.26");
