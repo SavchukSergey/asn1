@@ -1,17 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asn1", "Asn1\Asn1.csproj", "{8A48272E-227B-4B62-B35F-9ADC4330918A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asn1.Tests", "Asn1.Tests\Asn1.Tests.csproj", "{4B93003D-7535-4924-A778-157916905980}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{0631A06D-9F11-429C-BB9C-BD6826A326FD}"
-	ProjectSection(SolutionItems) = preProject
-		build\asn1.nuspec = build\asn1.nuspec
-		build\build.ps1 = build\build.ps1
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
