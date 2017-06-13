@@ -8,5 +8,6 @@
     <PackageTags>ASN.1, ASN</PackageTags>
     <Version>1.0.6</Version>
     <Copyright>Copyright © 2017</Copyright>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 </Project>
