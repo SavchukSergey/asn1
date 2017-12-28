@@ -6,8 +6,8 @@
 
 /Asn1.sln.DotSettings.user
 /_ReSharper.Caches
-/.vs/Asn1/v14/.suo
 /packages/*/
 /build/output
 /build/package
-/.vs/Asn1/v15/.suo
+/.vs
+/Asn1/asn1.snk
