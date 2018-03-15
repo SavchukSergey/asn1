@@ -13,6 +13,13 @@ namespace Asn1.Tests {
         };
 
         [Test]
+        public void GenericTest() {
+            var cert = GetEmbeddedBytes(@"pidgin.pkcs7");
+            var asn1 = Asn1Node.ReadNode(cert);
+            Assert.NotNull(asn1);
+        }
+
+        [Test]
         public void ReadTest() {
             var node = Asn1Node.ReadNode(new MemoryStream(_etalon));
             var typed = node as Asn1Ia5String;

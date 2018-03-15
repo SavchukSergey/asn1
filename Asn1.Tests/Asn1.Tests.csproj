@@ -11,6 +11,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="**\*.pkcs7" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Asn1\Asn1.csproj" />
   </ItemGroup>
 </Project>

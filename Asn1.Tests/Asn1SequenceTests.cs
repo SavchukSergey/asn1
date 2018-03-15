@@ -23,5 +23,11 @@ namespace Asn1.Tests {
             var data = node.GetBytes();
             AreEqual(_etalon, data);
         }
+
+        [Test]
+        public void OverflowTest() {
+            var bytes = GetEmbeddedBytes(@"overflow.pkcs7");
+            Assert.Throws<Asn1ParsingException>(() => Asn1Node.ReadNode(bytes));
+        }
     }
 }
