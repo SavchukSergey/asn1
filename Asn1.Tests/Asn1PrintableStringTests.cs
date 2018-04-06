@@ -3,6 +3,7 @@ using NUnit.Framework;
 
 namespace Asn1.Tests {
     [TestFixture]
+    [TestOf(typeof(Asn1PrintableString))]
     public class Asn1PrintableStringTests : BaseTest {
 
         private static readonly byte[] _etalon = { 0x13, 0x07, 0x54, 0x65, 0x73, 0x74, 0x4f, 0x72, 0x67 };

@@ -2,6 +2,8 @@ using System.IO;
 using NUnit.Framework;
 
 namespace Asn1.Tests {
+    [TestFixture]
+    [TestOf(typeof(Asn1Ia5String))]
     public class Asn1Ia5StringTest : BaseTest {
 
         private static readonly byte[] _etalon = {
@@ -12,12 +14,12 @@ namespace Asn1.Tests {
             0x74, 0x65, 0x73
         };
 
-        [Test]
-        public void GenericTest() {
-            var cert = GetEmbeddedBytes(@"pidgin.pkcs7");
-            var asn1 = Asn1Node.ReadNode(cert);
-            Assert.NotNull(asn1);
-        }
+        //[Test]
+        //public void GenericTest() {
+        //    var cert = GetEmbeddedBytes(@"pidgin.pkcs7");
+        //    var asn1 = Asn1Node.ReadNode(cert);
+        //    Assert.NotNull(asn1);
+        //}
 
         [Test]
         public void ReadTest() {
