@@ -69,6 +69,7 @@ namespace Asn1 {
                 case Asn1UniversalNodeType.Null: return Asn1Null.ReadFrom(stream);
                 case Asn1UniversalNodeType.ObjectId: return Asn1ObjectIdentifier.ReadFrom(stream);
                 case Asn1UniversalNodeType.Utf8String: return Asn1Utf8String.ReadFrom(stream);
+                case Asn1UniversalNodeType.NumericString: return Asn1NumericString.ReadFrom(stream);
                 case Asn1UniversalNodeType.PrintableString: return Asn1PrintableString.ReadFrom(stream);
                 case Asn1UniversalNodeType.Ia5String: return Asn1Ia5String.ReadFrom(stream);
                 case Asn1UniversalNodeType.UtcTime: return Asn1UtcTime.ReadFrom(stream);
@@ -122,7 +123,10 @@ namespace Asn1 {
                     return Asn1Set.Parse(xNode);
                 case Asn1Integer.NODE_NAME:
                     return Asn1Integer.Parse(xNode);
-                case Asn1ObjectIdentifier.NODE_NAME: return Asn1ObjectIdentifier.Parse(xNode);
+                case Asn1ObjectIdentifier.NODE_NAME:
+                    return Asn1ObjectIdentifier.Parse(xNode);
+                case Asn1NumericString.NODE_NAME:
+                    return Asn1NumericString.Parse(xNode);
                 case Asn1PrintableString.NODE_NAME:
                     return Asn1PrintableString.Parse(xNode);
                 case Asn1Utf8String.NODE_NAME:
