@@ -19,7 +19,7 @@ namespace Asn1 {
             return Nodes.FirstOrDefault(n => n.Is(tagClass, tagId));
         }
 
-        private static int ReadTagLength(Stream stream) {
+        private static int? ReadTagLength(Stream stream) {
             var len = stream.ReadByte();
             if (len > 128) {
                 var lenBytes = len - 128;
@@ -28,7 +28,8 @@ namespace Asn1 {
                     len = len * 256 + stream.ReadByte();
                 }
             } else if (len == 128) {
-                //todo: dynamic length
+                // Dynamic length
+                return null;
             }
             return len;
         }
@@ -37,24 +38,40 @@ namespace Asn1 {
             return ReadNode(new MemoryStream(data));
         }
 
-        public static Asn1Node ReadNode(Stream stream) {
+        public static Asn1Node ReadNode(Stream stream)
+        {
             var identifier = stream.ReadByte();
-            var type = (Asn1UniversalNodeType)(identifier & 0x1f);
-            var tagClass = (Asn1TagClass)(identifier >> 6);
-            var tagForm = (Asn1TagForm)((identifier >> 5) & 1);
-            var length = ReadTagLength(stream);
-            if (length > stream.Length) {
+            Asn1UniversalNodeType type = (Asn1UniversalNodeType)(identifier & 0x1f);
+            Asn1TagClass tagClass = (Asn1TagClass)(identifier >> 6);
+            Asn1TagForm tagForm = (Asn1TagForm)((identifier >> 5) & 1);
+            int? length = ReadTagLength(stream);
+            if (identifier == 0 && length == 0) return null;    // EOC detected
+            if (length > stream.Length)
+            {
                 throw new Asn1ParsingException($"Try to read more bytes from stream than exists {length} > {stream.Length}");
             }
-            var data = new byte[length];
-            stream.Read(data, 0, length);
-            stream = new MemoryStream(data);
-            if (tagClass == Asn1TagClass.Universal) {
-                var tag = ReadUniversalNode(type, tagForm, stream);
-                tag.TagClass = tagClass;
-                return tag;
-            } else {
-                var tag = Asn1CustomNode.ReadFrom(type, tagForm, stream);
+            if (length != null)
+            {
+                var data = new byte[(int)length];
+                stream.Read(data, 0, (int)length);
+                stream = new MemoryStream(data);
+                if (tagClass == Asn1TagClass.Universal)
+                {
+                    var tag = ReadUniversalNode(type, tagForm, stream);
+                    tag.TagClass = tagClass;
+                    return tag;
+                }
+                else
+                {
+                    var tag = Asn1CustomNode.ReadFrom(type, tagForm, stream);
+                    tag.TagClass = tagClass;
+                    return tag;
+                }
+            }
+            else
+            {
+                // We must just keep on reading the stream rather than keeping a separate memory buffer
+                Asn1DynamicArray tag = Asn1DynamicArray.ReadFrom(type, stream);
                 tag.TagClass = tagClass;
                 return tag;
             }
