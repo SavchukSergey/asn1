@@ -8,7 +8,7 @@ using System.Xml.Linq;
 
 namespace Asn1
 {
-    class Asn1DynamicArray : Asn1CompositeNode
+    public class Asn1DynamicArray : Asn1CompositeNode
     {
         public const string NODE_NAME = "Dynamic Length Array";
 
@@ -25,17 +25,33 @@ namespace Asn1
             return array;
         }
 
-        private Asn1DynamicArray(Asn1UniversalNodeType type)
+        public Asn1DynamicArray(Asn1UniversalNodeType type)
         {
-            _type = type;
+             _type = type;
         }
 
-
+        
         public override Asn1UniversalNodeType NodeType => _type;
 
         protected override XElement ToXElementCore()
         {
             return new XElement(NODE_NAME);
+        }
+
+        public override byte[] GetBytes()
+        {
+            var payload = GetBytesCore();
+            var type = NodeType;
+            var tagClass = TagClass;
+            var tagForm = TagForm;
+            var mem = new MemoryStream();
+            var identifier = ((int)tagClass << 6) | ((int)tagForm << 5) | (int)type;
+            mem.WriteByte((byte)identifier);
+            mem.WriteByte((byte)0x80);  // Marker that what follows is of indefinite length
+            mem.Write(payload, 0, payload.Length);
+            mem.WriteByte((byte)0x00);  // End marker is two zero values
+            mem.WriteByte((byte)0x00);  // End marker is two zero values
+            return mem.ToArray();
         }
     }
 }

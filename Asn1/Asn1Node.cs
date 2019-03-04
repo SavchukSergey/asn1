@@ -159,7 +159,7 @@ namespace Asn1 {
             }
         }
 
-        public byte[] GetBytes() {
+        public virtual byte[] GetBytes() {
             var payload = GetBytesCore();
             var type = NodeType;
             var tagClass = TagClass;

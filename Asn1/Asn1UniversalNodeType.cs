@@ -1,6 +1,6 @@
 ﻿namespace Asn1 {
     public enum Asn1UniversalNodeType {
-        Unknown = 0x00,
+        BERReserved = 0x00, // Needed as sometimes used in constructed dynamic length elements
         Boolean = 0x01,
         Integer = 0x02,
         BitString = 0x03,
