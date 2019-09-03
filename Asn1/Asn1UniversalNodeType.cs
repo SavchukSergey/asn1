@@ -13,6 +13,7 @@
         Set = 0x11,
         NumericString = 0x12,
         PrintableString = 0x13,
+        T61String = 0x14,
         Ia5String = 0x16,
         UtcTime = 0x17,
     }
